@@ -345,7 +345,7 @@ void setup() {
   mqttSerial.println("OK!");
 
   initRegistries();
-  mqttSerial.print("ESPAltherma started!");
+  mqttSerial.println("ESPAltherma started!");
 }
 
 void waitLoop(uint ms) {

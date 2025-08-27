@@ -60,7 +60,7 @@ void saveEEPROM(uint8_t state) {
 void readEEPROM() {
   if ('R' == EEPROM.read(EEPROM_CHK)) {
     digitalWrite(PIN_THERM, EEPROM.read(EEPROM_STATE));
-    mqttSerial.printf("Restoring previous state: %s", (EEPROM.read(EEPROM_STATE) == PIN_THERM_ACTIVE_STATE) ? "On" : "Off");
+    mqttSerial.printf("Restoring previous state: %s\n", (EEPROM.read(EEPROM_STATE) == PIN_THERM_ACTIVE_STATE) ? "On" : "Off");
   } else {
     mqttSerial.printf("EEPROM not initialized (%d). Initializing...", EEPROM.read(EEPROM_CHK));
     EEPROM.write(EEPROM_CHK, 'R');
