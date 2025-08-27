@@ -350,7 +350,7 @@ void setup() {
 
 void waitLoop(uint ms) {
   unsigned long start = millis();
-  while (millis() < start + ms) 
+  while (millis() < start + ms) {
     extraLoop();
   }
 }
