@@ -3,13 +3,12 @@
 
 #include <Arduino.h>
 
-void restart_board()
-{
-  #if defined(ARDUINO_ARCH_ESP8266)
+void restart_board() {
+#if defined(ARDUINO_ARCH_ESP8266)
   system_restart();
-  #else
+#else
   esp_restart();
-  #endif
+#endif
 }
 
 #endif
